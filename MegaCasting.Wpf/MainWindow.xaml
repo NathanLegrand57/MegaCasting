@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MegaCasting.Wpf"
         mc:Ignorable="d"
+        Background="White"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <DataGrid
+                 Grid.Column="2" 
+                 Grid.Row="1" 
+                 ItemsSource="{Binding Castings}"
+						 DisplayMemberPath="Libelle"
+						 SelectedItem="{Binding SelectedCasting}"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="toto" Binding="{Binding Libelle}"/>
+                <DataGridTextColumn Header="toto" Binding="{Binding Type}"/>
+            </DataGrid.Columns>
 
+        </DataGrid>
     </Grid>
 </Window>

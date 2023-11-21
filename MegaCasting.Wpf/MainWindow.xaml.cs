@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using MegaCasting.Wpf.ViewModels;
 
 namespace MegaCasting.Wpf
 {
@@ -21,14 +23,11 @@ namespace MegaCasting.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
-
-            using(MegacastingContext mg = new MegacastingContext())
-            {
-                var test = mg.TypeContrats.ToList();
-            }
+            DataContext = new ViewModelCasting();
         }
     }
 }
