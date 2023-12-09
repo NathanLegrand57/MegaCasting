@@ -5,21 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MegaCasting.Wpf"
         mc:Ignorable="d"
-        Background="White"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid
-                 Grid.Column="2" 
-                 Grid.Row="1" 
-                 ItemsSource="{Binding Castings}"
-						 DisplayMemberPath="Libelle"
-						 SelectedItem="{Binding SelectedCasting}"
-            AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="toto" Binding="{Binding Libelle}"/>
-                <DataGridTextColumn Header="toto" Binding="{Binding Type}"/>
-            </DataGrid.Columns>
+        Background="Gray"
+        Title="MegaCasting" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <TabControl>
+            <TabItem Header="Castings" Style="{StaticResource HeaderStyle}">
+                <Grid>
 
-        </DataGrid>
+                    <Grid ShowGridLines="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="18*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="LabelCastingsTitle" Content="Castings :" Grid.Column="1" Style="{StaticResource LabelCastingsTitle}"></Label>
+                        <DataGrid
+                         Grid.Column="1"
+                         Grid.Row="1" 
+                         ItemsSource="{Binding Castings}"
+						         DisplayMemberPath="Libelle"
+						         SelectedItem="{Binding SelectedCasting}"
+                    AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Nom du casting" Binding="{Binding Libelle}"/>
+                                <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
+                                <DataGridTextColumn Header="Date du casting" Binding="{Binding Date}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="_UpdateCastingButton" Content="Détails" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#0b5ed7"/>
+                        <Button x:Name="_ShowCastingButton" Content="Modifier" Grid.Row="1" Grid.Column="3" Foreground="Black" Background="#ffca2c"/>
+                        <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b"/>
+                        <Button x:Name="_AddCastingButton" Content="Ajouter" Grid.Row="1" Grid.Column="7" Foreground="White" Background="#157347"/>
+                    </Grid>
+
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
