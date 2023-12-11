@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="MegaCasting.Wpf.Views.PartenaireView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaCasting.Wpf.Views"
+        mc:Ignorable="d"
+        x:Name="Partenaire"
+        Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="200"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="18*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="LabelPartenairesTitle" Content="Partenaires :" Grid.Column="1" Style="{StaticResource LabelCastingsTitle}"></Label>
+                <DataGrid
+                 Grid.Column="1"
+                 Grid.Row="1" 
+                 ItemsSource="{Binding Partenaires}"
+				         DisplayMemberPath="Libelle"
+				         SelectedItem="{Binding SelectedPartenaire}"
+            AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Libellé du partenaire" Binding="{Binding Libelle}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="_UpdatePartenaireButton" Content="Modifier" Grid.Row="1" Grid.Column="1" Foreground="Black" Background="#ffca2c" Click="Edit_Partenaire_Click"/>
+                <Button x:Name="_DeletePartenaireButton" Content="Supprimer" Grid.Row="1" Grid.Column="3" Foreground="White" Background="#bb2d3b" Click="Delete_Partenaire_Button_Click"/>
+                <Button x:Name="_AddPartenaireButton" Content="Ajouter" Grid.Row="1" Grid.Column="7" Foreground="White" Background="#157347" Click="Create_Partenaire_Click"/>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

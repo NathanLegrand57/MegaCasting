@@ -10,6 +10,9 @@
     <Compile Update="Views\ClientView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PartenaireView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -21,10 +24,28 @@
     <Page Update="Views\ClientView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\FormModif.xaml">
+    <Page Update="Views\DetailsView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\FormOffer.xaml">
+    <Page Update="Views\FormCreatePartenaireView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FormCreateClientView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FormEditCasting.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FormCreateCastingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FormEditPartenaireView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FormEditClientView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PartenaireView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

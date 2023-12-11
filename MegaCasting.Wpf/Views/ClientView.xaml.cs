@@ -26,9 +26,25 @@ namespace MegaCasting.Wpf.Views
             DataContext = new ViewModelClient();
 
         }
-        private void DeleteClientButton_Click(object sender, RoutedEventArgs e)
+        private void Delete_Client_Button_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelClient)this.DataContext).RemoveClient();
+        }
+        private void Create_Client_Click(object sender, RoutedEventArgs e)
+        {
+            FormCreateClientView formOffer = new FormCreateClientView();
+
+            formOffer.ShowDialog();
+
+            //formOffer.MyProperty;
+
+        }private void Edit_Client_Click(object sender, RoutedEventArgs e)
+        {
+            FormEditClientView formEdit = new FormEditClientView();
+
+            formEdit.ShowDialog();
+
+            //formEdit.MyProperty;
         }
     }
 }

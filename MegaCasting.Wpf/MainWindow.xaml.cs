@@ -31,24 +31,34 @@ namespace MegaCasting.Wpf
             InitializeComponent();
             DataContext = new ViewModelCasting();
         }
-        private void creer_Click(object sender, RoutedEventArgs e)
+
+        private void Show_Details_Casting(object sender, RoutedEventArgs e)
         {
-            FormOffer formOffer = new FormOffer();
+            ViewModelDetails detailsview = new ViewModelDetails();
 
-            formOffer.ShowDialog();
+            detailsview.ShowDialog();
 
-            //formOffer.MyProperty;
+            //detailsview.MyProperty;
+        }
+
+        private void Create_Casting_Click(object sender, RoutedEventArgs e)
+        {
+            FormCreateCastingView formCreateCastingView = new FormCreateCastingView();
+
+            formCreateCastingView.ShowDialog();
+
+            //formCreateCastingView.MyProperty;
         }
         private void modif_Click(object sender, RoutedEventArgs e)
         {
-            FormModif formModif = new FormModif();
+            FormEditCasting formModif = new FormEditCasting();
 
             formModif.ShowDialog();
 
             //formModif.MyProperty;
         }
 
-        private void DeleteCastingButton_Click(object sender, RoutedEventArgs e)
+        private void Delete_Casting_Button_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelCasting)this.DataContext).RemoveCasting();
         }
