@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="MegaCasting.Wpf.Views.ClientView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaCasting.Wpf.Views"
+        mc:Ignorable="d"
+        >
+    <Grid ShowGridLines="True">
+        <Grid>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                            <RowDefinition Height="200"></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="18*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="LabelClientsTitle" Content="Clients :" Grid.Column="1" Style="{StaticResource LabelClientsTitle}"></Label>
+                        <DataGrid
+                     Grid.Column="1"
+                     Grid.Row="1" 
+                     ItemsSource="{Binding Clients}"
+					         DisplayMemberPath="Libelle"
+					         SelectedItem="{Binding SelectedClient}"
+                AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Libellé de l'entreprise" Binding="{Binding Libelle}"/>
+                                <DataGridTextColumn Header="Casting associé" Binding="{Binding Casting.Libelle}"/>
+                                <DataGridTextColumn Header="Ville" Binding="{Binding Adresse.Ville.Nom}"/>
+                                <DataGridTextColumn Header="Rue" Binding="{Binding Adresse.Rue}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="20"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="_UpdateCastingButton" Content="Détails" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#0b5ed7"/>
+                        <Button x:Name="_ShowCastingButton" Content="Modifier" Grid.Row="1" Grid.Column="3" Foreground="Black" Background="#ffca2c"/>
+                        <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b"/>
+                        <Button x:Name="_AddCastingButton" Content="Ajouter" Grid.Row="1" Grid.Column="7" Foreground="White" Background="#157347"/>
+                    </Grid>
+
+                </Grid>
+
+    </Grid>
+</UserControl>

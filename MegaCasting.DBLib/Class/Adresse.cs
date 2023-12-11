@@ -13,5 +13,7 @@ public partial class Adresse
 
     public virtual ICollection<Casting> Castings { get; set; } = new List<Casting>();
 
+    public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
+
     public virtual Ville Ville { get; set; } = null!;
 }

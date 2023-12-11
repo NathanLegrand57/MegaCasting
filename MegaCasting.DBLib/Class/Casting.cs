@@ -11,6 +11,8 @@ public partial class Casting
 
     public string Libelle { get; set; } = null!;
 
+    public string Description { get; set; } = null!;
+
     public DateTime Date { get; set; }
 
     public int AdresseId { get; set; }
@@ -18,6 +20,8 @@ public partial class Casting
     public int PartenaireId { get; set; }
 
     public virtual Adresse Adresse { get; set; } = null!;
+
+    public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 
     public virtual Partenaire Partenaire { get; set; } = null!;
 }

@@ -9,3 +9,14 @@ C:\Users\Alkatraz\source\repos\MegaCasting-main\MegaCasting-main\MegaCasting.Cor
 C:\Users\Alkatraz\source\repos\MegaCasting-main\MegaCasting-main\MegaCasting.Core\obj\Debug\net7.0\refint\MegaCasting.Core.dll
 C:\Users\Alkatraz\source\repos\MegaCasting-main\MegaCasting-main\MegaCasting.Core\obj\Debug\net7.0\MegaCasting.Core.pdb
 C:\Users\Alkatraz\source\repos\MegaCasting-main\MegaCasting-main\MegaCasting.Core\obj\Debug\net7.0\ref\MegaCasting.Core.dll
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\bin\Debug\net7.0\MegaCasting.Core.deps.json
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\bin\Debug\net7.0\MegaCasting.Core.dll
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\bin\Debug\net7.0\MegaCasting.Core.pdb
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\MegaCasting.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\MegaCasting.Core.AssemblyInfoInputs.cache
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\MegaCasting.Core.AssemblyInfo.cs
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\MegaCasting.Core.csproj.CoreCompileInputs.cache
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\MegaCasting.Core.dll
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\refint\MegaCasting.Core.dll
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\MegaCasting.Core.pdb
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.Core\obj\Debug\net7.0\ref\MegaCasting.Core.dll

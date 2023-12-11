@@ -1,4 +1,5 @@
 ﻿using MegaCasting.DBLib.Class;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,7 +23,7 @@ namespace MegaCasting.Wpf.ViewModels
 
             using (MegacastingContext mg = new MegacastingContext())
             {
-                Castings = new ObservableCollection<Casting>(mg.Castings.ToList());
+                Castings = new ObservableCollection<Casting>(mg.Castings.Include(p=>p.Adresse).ThenInclude(a=>a.Ville).ToList());
             }
         }
     }

@@ -21,6 +21,8 @@ public partial class MegacastingContext : DbContext
 
     public virtual DbSet<Casting> Castings { get; set; }
 
+    public virtual DbSet<Client> Clients { get; set; }
+
     public virtual DbSet<Contrat> Contrats { get; set; }
 
     public virtual DbSet<DomaineMetier> DomaineMetiers { get; set; }
@@ -35,7 +37,7 @@ public partial class MegacastingContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySQL("Server=127.0.0.1;Database=megacasting;user=root;password=;");
+        => optionsBuilder.UseMySQL("Server=localhost;Database=megacasting;user=root;password=;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -104,6 +106,9 @@ public partial class MegacastingContext : DbContext
             entity.Property(e => e.Date)
                 .HasColumnType("date")
                 .HasColumnName("date");
+            entity.Property(e => e.Description)
+                .HasMaxLength(500)
+                .HasColumnName("description");
             entity.Property(e => e.Libelle)
                 .HasMaxLength(50)
                 .HasColumnName("libelle");
@@ -121,6 +126,34 @@ public partial class MegacastingContext : DbContext
                 .HasForeignKey(d => d.PartenaireId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Index_partenaire");
+        });
+
+        modelBuilder.Entity<Client>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("client");
+
+            entity.HasIndex(e => e.AdresseId, "ForeignKey_adresse_id");
+
+            entity.HasIndex(e => e.CastingId, "ForeignKey_casting_id");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.AdresseId).HasColumnName("adresse_id");
+            entity.Property(e => e.CastingId).HasColumnName("casting_id");
+            entity.Property(e => e.Libelle)
+                .HasMaxLength(150)
+                .HasColumnName("libelle");
+
+            entity.HasOne(d => d.Adresse).WithMany(p => p.Clients)
+                .HasForeignKey(d => d.AdresseId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("ForeignKey_adresse_id");
+
+            entity.HasOne(d => d.Casting).WithMany(p => p.Clients)
+                .HasForeignKey(d => d.CastingId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("ForeignKey_casting_id");
         });
 
         modelBuilder.Entity<Contrat>(entity =>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\natha\source\repos\MegaCasting\MegaCasting.Wpf\App.xaml
-2-96019324
+5850658355
 
-6-312356332
+101608893708
 2371434171432
-MainWindow.xaml;Styles\Styles.xaml;
+MainWindow.xaml;Styles\Styles.xaml;Views\ClientView.xaml;Views\FormModif.xaml;Views\FormOffer.xaml;
 
 True
 

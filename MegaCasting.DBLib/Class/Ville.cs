@@ -7,7 +7,7 @@ public partial class Ville
 {
     public int Id { get; set; }
 
-    public sbyte CodePostal { get; set; }
+    public int CodePostal { get; set; }
 
     public string Nom { get; set; } = null!;
 
