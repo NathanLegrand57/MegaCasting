@@ -17,13 +17,24 @@ namespace MegaCasting.Wpf.ViewModels
 
         public Casting? SelectedCasting { get; set; }
 
-
         public ViewModelCasting()
         {
 
             using (MegacastingContext mg = new MegacastingContext())
             {
                 Castings = new ObservableCollection<Casting>(mg.Castings.Include(p=>p.Adresse).ThenInclude(a=>a.Ville).ToList());
+            }
+        }
+        internal void RemoveCasting()
+        {
+            if (this.SelectedCasting is not null)
+            {
+                using (MegacastingContext context = new())
+                {
+                    context.Remove(this.SelectedCasting);
+                    context.SaveChanges();
+                }
+                this.Castings?.Remove(this.SelectedCasting);
             }
         }
     }

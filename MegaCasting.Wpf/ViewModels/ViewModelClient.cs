@@ -24,5 +24,17 @@ namespace MegaCasting.Wpf.ViewModels
                 Clients = new ObservableCollection<Client>(mg.Clients.Include(p => p.Adresse).ThenInclude(a => a.Ville).Include(c=>c.Casting).ToList());
             }
         }
+        internal void RemoveClient()
+        {
+            if (this.SelectedClient is not null)
+            {
+                using (MegacastingContext context = new())
+                {
+                    context.Remove(this.SelectedClient);
+                    context.SaveChanges();
+                }
+                this.Clients?.Remove(this.SelectedClient);
+            }
+        }
     }
 }

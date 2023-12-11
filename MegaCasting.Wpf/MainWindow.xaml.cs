@@ -47,5 +47,10 @@ namespace MegaCasting.Wpf
 
             //formModif.MyProperty;
         }
+
+        private void DeleteCastingButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelCasting)this.DataContext).RemoveCasting();
+        }
     }
 }

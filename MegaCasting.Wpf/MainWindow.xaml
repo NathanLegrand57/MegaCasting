@@ -61,7 +61,7 @@
 
                         <Button x:Name="_UpdateCastingButton" Content="Détails" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#0b5ed7"/>
                         <Button x:Name="_ShowCastingButton" Content="Modifier" Grid.Row="1" Grid.Column="3" Foreground="Black" Background="#ffca2c" Click="modif_Click"/>
-                        <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b"/>
+                        <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b" Click="DeleteCastingButton_Click"/>
                         <Button x:Name="_AddCastingButton" Content="Ajouter" Grid.Row="1" Grid.Column="7" Foreground="White" Background="#157347"  Click="creer_Click"/>
                     </Grid>
 

@@ -26,5 +26,9 @@ namespace MegaCasting.Wpf.Views
             DataContext = new ViewModelClient();
 
         }
+        private void DeleteClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelClient)this.DataContext).RemoveClient();
+        }
     }
 }
