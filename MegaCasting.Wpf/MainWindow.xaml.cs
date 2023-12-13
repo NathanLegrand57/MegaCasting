@@ -51,14 +51,14 @@ namespace MegaCasting.Wpf
         }
         private void Edit_Casting_Click(object sender, RoutedEventArgs e)
         {
-            FormEditCasting formModif = new FormEditCasting();
+            FormEditCasting formModif = new FormEditCasting(((ViewModelCasting)this.DataContext));
 
             formModif.ShowDialog();
 
             //formModif.MyProperty;
         }
 
-        private void Delete_Casting_Button_Click(object sender, RoutedEventArgs e)
+        private void Delete_Casting_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelCasting)this.DataContext).RemoveCasting();
         }

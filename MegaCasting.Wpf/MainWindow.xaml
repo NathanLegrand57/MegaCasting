@@ -74,7 +74,7 @@
                             </Grid.ColumnDefinitions>
                             <Button x:Name="_ShowCastingButton" Content="Détails" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#0b5ed7" Click="Show_Details_Casting"/>
                             <Button x:Name="_UpdateCastingButton" Content="Modifier" Grid.Row="1" Grid.Column="3" Foreground="Black" Background="#ffca2c" Click="Edit_Casting_Click"/>
-                            <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b" Click="Delete_Casting_Button_Click"/>
+                            <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b" Click="Delete_Casting_Click"/>
                         </Grid>
                     </GroupBox>
 

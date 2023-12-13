@@ -47,5 +47,9 @@ namespace MegaCasting.Wpf.Views
 
             //formEdit.MyProperty;
         }
+        private void Delete_Partenaire_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelPartenaire)this.DataContext).RemovePartenaire();
+        }
     }
 }

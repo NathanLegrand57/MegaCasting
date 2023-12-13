@@ -64,7 +64,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="_UpdatePartenaireButton" Content="Modifier" Grid.Row="1" Grid.Column="1" Foreground="Black" Background="#ffca2c" Click="Edit_Partenaire_Click"/>
-                    <Button x:Name="_DeletePartenaireButton" Content="Supprimer" Grid.Row="1" Grid.Column="3" Foreground="White" Background="#bb2d3b" Click="Delete_Partenaire_Button_Click"/>
+                    <Button x:Name="_DeletePartenaireButton" Content="Supprimer" Grid.Row="1" Grid.Column="3" Foreground="White" Background="#bb2d3b" Click="Delete_Partenaire_Click"/>
                 </Grid>
             </GroupBox>
 

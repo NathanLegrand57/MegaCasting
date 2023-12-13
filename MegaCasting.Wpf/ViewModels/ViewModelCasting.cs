@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace MegaCasting.Wpf.ViewModels
 {
 
-    internal class ViewModelCasting
+    public class ViewModelCasting
     {
 
         public ObservableCollection<Casting> Castings { get; set; }
@@ -35,6 +35,16 @@ namespace MegaCasting.Wpf.ViewModels
                     context.SaveChanges();
                 }
                 this.Castings?.Remove(this.SelectedCasting);
+            }
+        }internal void UpdateCasting()
+        {
+            if (this.SelectedCasting is not null)
+            {
+                using (MegacastingContext context = new())
+                {
+                    context.Update(this.SelectedCasting);
+                    context.SaveChanges();
+                }
             }
         }
     }

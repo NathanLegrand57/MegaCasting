@@ -53,19 +53,19 @@
 
         <Label Grid.Column="2" Grid.Row="7" Content="Description :" Style="{StaticResource blockstyle}"/>
 
-        <TextBox x:Name="_CastingNameTextBox" Grid.Column="3" Grid.Row="1" Width="80" Height="30" DataContext="{Binding SelectedCasting.Libelle}" Style="{StaticResource textstyle}"/>
+        <TextBox x:Name="_CastingLibelleTextBox" Grid.Column="3" Grid.Row="1" Width="80" Height="30" Text="{Binding SelectedCasting.Libelle}" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="2" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox x:Name="_CastingTypeTextBox" Grid.Column="3" Grid.Row="2" Width="80" Height="30" Text="{Binding SelectedCasting.Type}" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="3" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox x:Name="_CastingLibelleClientTextBox" Grid.Column="3" Grid.Row="3" Width="80" Height="30" Text="{Binding SelectedCasting.Client.Libelle}" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="4" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox x:Name="_CastingVilleClientTextBox" Grid.Column="3" Grid.Row="4" Width="80" Height="30" Text="{Binding SelectedCasting.Adresse.Ville.Nom}" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="5" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox x:Name="_CastingRueClientTextBox" Grid.Column="3" Grid.Row="5" Width="80" Height="30" Text="{Binding SelectedCasting.Adresse.Rue}" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="6" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox x:Name="_CastingDateTextBox" Grid.Column="3" Grid.Row="6" Width="80" Height="30" Text="{Binding SelectedCasting.Date}" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="7" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox x:Name="_CastingDescriptionTextBox" Grid.Column="3" Grid.Row="7" Width="80" Height="30" Text="{Binding SelectedCasting.Description}" Style="{StaticResource textstyle}"/>
         
         <Button x:Name="annuler" Content="Annuler" Grid.Column="2" Grid.Row="9" Margin="3" Click="annuler_click" Style="{StaticResource buttonCancelStyle}" />
 
