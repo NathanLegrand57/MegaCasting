@@ -23,6 +23,7 @@ namespace MegaCasting.Wpf.Views
         public PartenaireView()
         {
             InitializeComponent();
+            DataContext = new ViewModelPartenaire();
         }
         private void Delete_Partenaire_Button_Click(object sender, RoutedEventArgs e)
         {

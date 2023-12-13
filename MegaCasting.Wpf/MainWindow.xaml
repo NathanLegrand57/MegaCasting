@@ -24,7 +24,7 @@
                             <ColumnDefinition Width="18*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label x:Name="LabelCastingsTitle" Content="Castings :" Grid.Column="1" Style="{StaticResource LabelCastingsTitle}"></Label>
+                        <Label x:Name="LabelCastingsTitle" Content="Castings :" Grid.Column="1" Style="{StaticResource LabelTitle}"></Label>
                         <DataGrid
                          Grid.Column="1"
                          Grid.Row="1" 
@@ -41,29 +41,42 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
-                    <Grid>
+                    <Grid ShowGridLines="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50"></RowDefinition>
                             <RowDefinition Height="30"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="70"></ColumnDefinition>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="70"></ColumnDefinition>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="70"></ColumnDefinition>
-                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="16*"></ColumnDefinition>
                             <ColumnDefinition Width="70"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-
-                        <Button x:Name="_ShowCastingButton" Content="Détails" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#0b5ed7" Click="Show_Details_Casting"/>
-                        <Button x:Name="_UpdateCastingButton" Content="Modifier" Grid.Row="1" Grid.Column="3" Foreground="Black" Background="#ffca2c" Click="modif_Click"/>
-                        <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b" Click="Delete_Casting_Button_Click"/>
-                        <Button x:Name="_AddCastingButton" Content="Ajouter" Grid.Row="1" Grid.Column="7" Foreground="White" Background="#157347"  Click="Create_Casting_Click"/>
+                        <Button x:Name="_AddCastingButton" Content="Ajouter" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#157347"  Click="Create_Casting_Click"/>
                     </Grid>
+                    <GroupBox Grid.Row="1" Visibility="{Binding SelectedCasting, Converter={StaticResource SharedObjectToVisibilityConverter}}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="10*"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="_ShowCastingButton" Content="Détails" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#0b5ed7" Click="Show_Details_Casting"/>
+                            <Button x:Name="_UpdateCastingButton" Content="Modifier" Grid.Row="1" Grid.Column="3" Foreground="Black" Background="#ffca2c" Click="Edit_Casting_Click"/>
+                            <Button x:Name="_DeleteCastingButton" Content="Supprimer" Grid.Row="1" Grid.Column="5" Foreground="White" Background="#bb2d3b" Click="Delete_Casting_Button_Click"/>
+                        </Grid>
+                    </GroupBox>
 
                 </Grid>
             </TabItem>

@@ -49,7 +49,7 @@ namespace MegaCasting.Wpf
 
             //formCreateCastingView.MyProperty;
         }
-        private void modif_Click(object sender, RoutedEventArgs e)
+        private void Edit_Casting_Click(object sender, RoutedEventArgs e)
         {
             FormEditCasting formModif = new FormEditCasting();
 

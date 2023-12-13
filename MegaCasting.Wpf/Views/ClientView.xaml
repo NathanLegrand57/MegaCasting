@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         >
     <Grid ShowGridLines="True">
-        <Grid>
 
                     <Grid>
                         <Grid.RowDefinitions>
@@ -20,14 +19,14 @@
                             <ColumnDefinition Width="18*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label x:Name="LabelClientsTitle" Content="Clients :" Grid.Column="1" Style="{StaticResource LabelClientsTitle}"></Label>
+                        <Label x:Name="LabelClientsTitle" Content="Clients :" Grid.Column="1" Style="{StaticResource LabelTitle}"></Label>
                         <DataGrid
-                     Grid.Column="1"
-                     Grid.Row="1" 
-                     ItemsSource="{Binding Clients}"
+                             Grid.Column="1"
+                             Grid.Row="1" 
+                             ItemsSource="{Binding Clients}"
 					         DisplayMemberPath="Libelle"
 					         SelectedItem="{Binding SelectedClient}"
-                AutoGenerateColumns="False">
+                             AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Libellé de l'entreprise" Binding="{Binding Libelle}"/>
                                 <DataGridTextColumn Header="Casting associé" Binding="{Binding Casting.Libelle}"/>
@@ -43,23 +42,34 @@
                             <RowDefinition Height="*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="70"></ColumnDefinition>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="70"></ColumnDefinition>
-                            <ColumnDefinition Width="20"></ColumnDefinition>
-                            <ColumnDefinition Width="70"></ColumnDefinition>
-                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="16*"></ColumnDefinition>
                             <ColumnDefinition Width="70"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-
-                        <Button x:Name="_UpdateClientButton" Content="Modifier" Grid.Row="1" Grid.Column="1" Foreground="Black" Background="#ffca2c" Click="Edit_Client_Click"/>
-                        <Button x:Name="_DeleteClientButton" Content="Supprimer" Grid.Row="1" Grid.Column="3" Foreground="White" Background="#bb2d3b" Click="Delete_Client_Button_Click"/>
-                        <Button x:Name="_AddClientButton" Content="Ajouter" Grid.Row="1" Grid.Column="7" Foreground="White" Background="#157347" Click="Create_Client_Click"/>
+                        <Button x:Name="_AddClientButton" Content="Ajouter" Grid.Row="1" Grid.Column="1" Foreground="White" Background="#157347"  Click="Create_Client_Click"/>
                     </Grid>
-
-                </Grid>
+                    <GroupBox Grid.Row="1" Visibility="{Binding SelectedClient, Converter={StaticResource SharedObjectToVisibilityConverter}}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="10*"></ColumnDefinition>
+                                <ColumnDefinition Width="70"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="_UpdateClientButton" Content="Modifier" Grid.Row="1" Grid.Column="1" Foreground="Black" Background="#ffca2c" Click="Edit_Client_Click"/>
+                            <Button x:Name="_DeleteClientButton" Content="Supprimer" Grid.Row="1" Grid.Column="3" Foreground="White" Background="#bb2d3b" Click="Delete_Client_Button_Click"/>
+                        </Grid>
+                    </GroupBox>
 
     </Grid>
 </UserControl>

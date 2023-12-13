@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.Wpf.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,14 @@ namespace MegaCasting.Wpf.Views
         private void valider_click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void UpdateCastingButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (((ViewModelCasting)this.DataContext).SelectedCasting != null)
+            {
+                ((ViewModelCasting)this.DataContext).SelectedCasting.Libelle = _CastingNameTextBox.Text;
+
+            }
         }
 
         private void annuler_click(object sender, RoutedEventArgs e)

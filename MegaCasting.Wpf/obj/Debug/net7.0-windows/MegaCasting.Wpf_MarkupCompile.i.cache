@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\natha\source\repos\MegaCasting\MegaCasting.Wpf\App.xaml
 11-1466331378
 
-17-1065118237
+18-1121056954
 2371434171432
 MainWindow.xaml;Styles\Styles.xaml;Views\ClientView.xaml;Views\DetailsView.xaml;Views\FormCreateCastingView.xaml;Views\FormCreateClientView.xaml;Views\FormCreatePartenaireView.xaml;Views\FormEditCasting.xaml;Views\FormEditClientView.xaml;Views\FormEditPartenaireView.xaml;Views\PartenaireView.xaml;
 
-False
+True
 
