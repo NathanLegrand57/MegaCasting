@@ -70,4 +70,29 @@
         </Style.Setters>
 
     </Style>
+    <Style x:Key="ConnexionLabel" TargetType="Label">
+
+        <Style.Setters>
+
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Foreground" Value="black"></Setter>
+            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="Opacity" Value="0.8"></Setter>
+
+        </Style.Setters>
+
+    </Style>
+    <Style x:Key="ConnexionButton" TargetType="Button">
+
+        <Style.Setters>
+
+            <Setter Property="Background" Value="Green"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Opacity" Value="0.8"></Setter>
+
+        </Style.Setters>
+
+    </Style>
 </ResourceDictionary>

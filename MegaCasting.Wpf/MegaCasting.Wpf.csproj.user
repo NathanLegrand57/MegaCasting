@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\CastingView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ClientView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PartenaireView.xaml.cs">
@@ -19,6 +25,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CastingView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ClientView.xaml">
@@ -33,7 +42,7 @@
     <Page Update="Views\FormCreateClientView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\FormEditCasting.xaml">
+    <Page Update="Views\FormEditCastingView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\FormCreateCastingView.xaml">
@@ -43,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\FormEditClientView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PartenaireView.xaml">

@@ -13,6 +13,7 @@
                 <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />-->
                 <ResourceDictionary Source="./Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <converters:BoolToVisibilityConverter x:Key="SharedBoolToVisibilityConverter"/>
             <converters:ObjectToVisibilityConverter x:Key="SharedObjectToVisibilityConverter"/>
 
         </ResourceDictionary>

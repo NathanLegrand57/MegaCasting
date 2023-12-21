@@ -15,5 +15,5 @@ public partial class Client
 
     public virtual Adresse Adresse { get; set; } = null!;
 
-    public virtual Casting Casting { get; set; } = null!;
+    public virtual ICollection<Casting> Castings { get; set; } = new List<Casting>();
 }

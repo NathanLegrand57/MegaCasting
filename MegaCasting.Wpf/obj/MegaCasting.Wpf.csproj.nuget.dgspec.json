@@ -4,6 +4,65 @@
     "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.Wpf\\MegaCasting.Wpf.csproj": {}
   },
   "projects": {
+    "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.Core\\MegaCasting.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.Core\\MegaCasting.Core.csproj",
+        "projectName": "MegaCasting.Core",
+        "projectPath": "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.Core\\MegaCasting.Core.csproj",
+        "packagesPath": "C:\\Users\\natha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\natha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.DBLib\\MegaCasting.DBLib.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -71,6 +130,10 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -89,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -121,6 +184,9 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
+              "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.Core\\MegaCasting.Core.csproj": {
+                "projectPath": "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.Core\\MegaCasting.Core.csproj"
+              },
               "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.DBLib\\MegaCasting.DBLib.csproj": {
                 "projectPath": "C:\\Users\\natha\\source\\repos\\MegaCasting\\MegaCasting.DBLib\\MegaCasting.DBLib.csproj"
               }
@@ -128,6 +194,9 @@
           }
         },
         "warningProperties": {
+          "noWarn": [
+            "NU1701"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -136,6 +205,12 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -155,7 +230,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

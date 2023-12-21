@@ -29,7 +29,6 @@
                              AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Libellé de l'entreprise" Binding="{Binding Libelle}"/>
-                                <DataGridTextColumn Header="Casting associé" Binding="{Binding Casting.Libelle}"/>
                                 <DataGridTextColumn Header="Ville" Binding="{Binding Adresse.Ville.Nom}"/>
                                 <DataGridTextColumn Header="Rue" Binding="{Binding Adresse.Rue}"/>
                             </DataGrid.Columns>

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MegaCasting.Wpf.ViewModels
 {
-    internal class ViewModelPartenaire
+    public class ViewModelPartenaire
     {
         public ObservableCollection<Partenaire> Partenaires { get; set; }
 
@@ -22,6 +22,17 @@ namespace MegaCasting.Wpf.ViewModels
             using (MegacastingContext mg = new MegacastingContext())
             {
                 Partenaires = new ObservableCollection<Partenaire>(mg.Partenaires.ToList());
+            }
+        }
+        internal void UpdatePartenaire()
+        {
+            if (this.SelectedPartenaire is not null)
+            {
+                using (MegacastingContext context = new())
+                {
+                    context.Update(this.SelectedPartenaire);
+                    context.SaveChanges();
+                }
             }
         }
         internal void RemovePartenaire()

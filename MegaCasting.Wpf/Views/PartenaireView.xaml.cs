@@ -41,11 +41,9 @@ namespace MegaCasting.Wpf.Views
         }
         private void Edit_Partenaire_Click(object sender, RoutedEventArgs e)
         {
-            FormEditPartenaireView formEdit = new FormEditPartenaireView();
+            FormEditPartenaireView formModif = new FormEditPartenaireView(((ViewModelPartenaire)this.DataContext));
 
-            formEdit.ShowDialog();
-
-            //formEdit.MyProperty;
+            formModif.ShowDialog();
         }
         private void Delete_Partenaire_Click(object sender, RoutedEventArgs e)
         {

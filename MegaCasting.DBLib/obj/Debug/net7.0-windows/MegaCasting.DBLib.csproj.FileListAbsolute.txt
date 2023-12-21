@@ -26,3 +26,4 @@ C:\Users\natha\source\repos\MegaCasting\MegaCasting.DBLib\obj\Debug\net7.0-windo
 C:\Users\natha\source\repos\MegaCasting\MegaCasting.DBLib\obj\Debug\net7.0-windows\MegaCasting.DBLib.pdb
 C:\Users\natha\source\repos\MegaCasting\MegaCasting.DBLib\obj\Debug\net7.0-windows\MegaCasting.DBLib.genruntimeconfig.cache
 C:\Users\natha\source\repos\MegaCasting\MegaCasting.DBLib\obj\Debug\net7.0-windows\ref\MegaCasting.DBLib.dll
+C:\Users\natha\source\repos\MegaCasting\MegaCasting.DBLib\obj\Debug\net7.0-windows\MegaCasting.DBLib.sourcelink.json

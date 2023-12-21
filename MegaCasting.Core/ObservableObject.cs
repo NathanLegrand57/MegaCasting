@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace MegaCasting.Core
 {
-
     /// <summary>
-    /// Classe rendant un objet observable
+    /// Permet à l'objet qui l'hérite d'être observable et d'utiliser la méthode <see cref="SetProperty{T}(string, ref T, T, bool)"/>
     /// </summary>
     public abstract class ObservableObject : INotifyPropertyChanged, INotifyPropertyChanging
     {
@@ -24,6 +18,7 @@ namespace MegaCasting.Core
         /// Se produit quand la propriété à été changée
         /// </summary>
         public event PropertyChangedEventHandler? PropertyChanged;
+
         #endregion
 
         #region Methods
@@ -33,17 +28,14 @@ namespace MegaCasting.Core
         /// </summary>
         /// <param name="propertyName"></param>
         protected void OnPropertyChanging(string propertyName)
-        {
-            this.PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
-        }
+            => this.PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
+
         /// <summary>
         /// Déclenche l'événement <see cref="PropertyChanged"/>
         /// </summary>
         /// <param name="propertyName"></param>
-        protected void OnPropertyChanged(string propertyName)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        protected void OnPropertyChanged(string propertyName) => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         /// <summary>
         /// Assigne une propriété et déclenche les événements <see cref="PropertyChanging"/> puis <see cref="PropertyChanged"/> 
         /// </summary>
@@ -51,8 +43,10 @@ namespace MegaCasting.Core
         /// <param name="propertyName">Nom de la propriété</param>
         /// <param name="field">Référence de l'attribut à assigner</param>
         /// <param name="value"> Valeur</param>
-        protected void SetProperty<T>(string propertyName, ref T field, T value)
+        protected void SetProperty<T>(string propertyName, ref T field, T value, bool nullable = true)
         {
+            if (value is null && !nullable)
+                throw new ArgumentNullException(nameof(T) + "N'accepte pas de valeur null");
             if ((field == null && value != null)
                 || (field?.Equals(value) == false))
             {

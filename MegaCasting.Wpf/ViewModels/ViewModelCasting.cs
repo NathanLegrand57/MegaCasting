@@ -22,7 +22,18 @@ namespace MegaCasting.Wpf.ViewModels
 
             using (MegacastingContext mg = new MegacastingContext())
             {
-                Castings = new ObservableCollection<Casting>(mg.Castings.Include(p=>p.Adresse).ThenInclude(a=>a.Ville).ToList());
+                Castings = new ObservableCollection<Casting>(mg.Castings.Include(p=>p.Adresse).ThenInclude(a=>a.Ville).Include(b=>b.Partenaire).ToList());
+            }
+        }
+        internal void UpdateCasting()
+        {
+            if (this.SelectedCasting is not null)
+            {
+                using (MegacastingContext context = new())
+                {
+                    context.Update(this.SelectedCasting);
+                    context.SaveChanges();
+                }
             }
         }
         internal void RemoveCasting()
@@ -35,16 +46,6 @@ namespace MegaCasting.Wpf.ViewModels
                     context.SaveChanges();
                 }
                 this.Castings?.Remove(this.SelectedCasting);
-            }
-        }internal void UpdateCasting()
-        {
-            if (this.SelectedCasting is not null)
-            {
-                using (MegacastingContext context = new())
-                {
-                    context.Update(this.SelectedCasting);
-                    context.SaveChanges();
-                }
             }
         }
     }

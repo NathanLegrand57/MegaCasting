@@ -5,6 +5,7 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+	<NoWarn>nu1701</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MegaCasting.Core\MegaCasting.Core.csproj" />
     <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj" />
   </ItemGroup>
 

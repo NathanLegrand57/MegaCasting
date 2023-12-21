@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MegaCasting.Wpf.ViewModels
 {
-    internal class ViewModelClient
+    public class ViewModelClient
     {
         public ObservableCollection<Client> Clients { get; set; }
 
@@ -21,7 +21,18 @@ namespace MegaCasting.Wpf.ViewModels
 
             using (MegacastingContext mg = new MegacastingContext())
             {
-                Clients = new ObservableCollection<Client>(mg.Clients.Include(p => p.Adresse).ThenInclude(a => a.Ville).Include(c=>c.Casting).ToList());
+                Clients = new ObservableCollection<Client>(mg.Clients.Include(p => p.Adresse).ThenInclude(a => a.Ville).ToList());
+            }
+        }
+        internal void UpdateClient()
+        {
+            if (this.SelectedClient is not null)
+            {
+                using (MegacastingContext context = new())
+                {
+                    context.Update(this.SelectedClient);
+                    context.SaveChanges();
+                }
             }
         }
         internal void RemoveClient()
