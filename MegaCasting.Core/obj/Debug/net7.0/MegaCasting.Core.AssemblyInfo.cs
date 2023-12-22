@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MegaCasting.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20ba21906b10decb99c2f501505b2dce7c924702")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MegaCasting.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MegaCasting.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

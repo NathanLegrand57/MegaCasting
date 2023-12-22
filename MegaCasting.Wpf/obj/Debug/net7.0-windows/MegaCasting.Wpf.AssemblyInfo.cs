@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MegaCasting.Wpf")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20ba21906b10decb99c2f501505b2dce7c924702")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69654e72cab67a7f4b28540d2850b70028a6e564")]
 [assembly: System.Reflection.AssemblyProductAttribute("MegaCasting.Wpf")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MegaCasting.Wpf")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -251,7 +251,7 @@ public partial class MegacastingContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.MotDePasse)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .HasColumnName("mot_de_passe");
             entity.Property(e => e.NomUtilisateur)
                 .HasMaxLength(75)

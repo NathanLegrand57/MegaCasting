@@ -23,7 +23,7 @@ namespace MegaCasting.Wpf.ViewModels
         /// <summary>
         /// Mot de passe
         /// </summary>
-        private string? _MotDePasse;
+        private String? _MotDePasse;
 
         /// <summary>
         /// Message
