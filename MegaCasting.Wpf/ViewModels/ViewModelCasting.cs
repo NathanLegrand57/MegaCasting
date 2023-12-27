@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace MegaCasting.Wpf.ViewModels
 {
 
-    internal class ViewModelCasting
+    public class ViewModelCasting
     {
         internal void AddCasting()
         {
@@ -54,10 +54,21 @@ namespace MegaCasting.Wpf.ViewModels
 
             using (MegacastingContext mg = new MegacastingContext())
             {
-                Castings = new ObservableCollection<Casting>(mg.Castings.Include(p=>p.Adresse).ThenInclude(a=>a.Ville).ToList());
-
+                Castings = new ObservableCollection<Casting>(mg.Castings.Include(p=>p.Adresse).ThenInclude(a=>a.Ville).Include(b=>b.Partenaire).ToList());
                 Villes = new ObservableCollection<Ville>(mg.Villes.ToList());
                 Partenaires = new ObservableCollection<Partenaire>(mg.Partenaires.ToList());
+            }
+        }
+        internal void UpdateCasting()
+        {
+            if (this.SelectedCasting is not null)
+            {
+                using (MegacastingContext context = new())
+                {
+                    context.Update(this.SelectedCasting);
+                    context.SaveChanges();
+                }
+                
             }
         }
         internal void RemoveCasting()

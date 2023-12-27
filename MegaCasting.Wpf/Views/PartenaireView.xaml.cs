@@ -23,6 +23,7 @@ namespace MegaCasting.Wpf.Views
         public PartenaireView()
         {
             InitializeComponent();
+            DataContext = new ViewModelPartenaire();
         }
         private void Delete_Partenaire_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -40,11 +41,13 @@ namespace MegaCasting.Wpf.Views
         }
         private void Edit_Partenaire_Click(object sender, RoutedEventArgs e)
         {
-            FormEditPartenaireView formEdit = new FormEditPartenaireView();
+            FormEditPartenaireView formModif = new FormEditPartenaireView(((ViewModelPartenaire)this.DataContext));
 
-            formEdit.ShowDialog();
-
-            //formEdit.MyProperty;
+            formModif.ShowDialog();
+        }
+        private void Delete_Partenaire_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelPartenaire)this.DataContext).RemovePartenaire();
         }
     }
 }

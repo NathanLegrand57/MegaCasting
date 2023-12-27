@@ -38,13 +38,12 @@ namespace MegaCasting.Wpf.Views
 
             //formOffer.MyProperty;
 
-        }private void Edit_Client_Click(object sender, RoutedEventArgs e)
+        }
+        private void Edit_Client_Click(object sender, RoutedEventArgs e)
         {
-            FormEditClientView formEdit = new FormEditClientView();
+            FormEditClientView formModif = new FormEditClientView(((ViewModelClient)this.DataContext));
 
-            formEdit.ShowDialog();
-
-            //formEdit.MyProperty;
+            formModif.ShowDialog();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.Wpf.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,20 @@ namespace MegaCasting.Wpf.Views
     /// </summary>
     public partial class FormEditClientView : Window
     {
-        public FormEditClientView()
+        public FormEditClientView(ViewModelClient viewModel)
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
 
-        private void valider_click(object sender, RoutedEventArgs e)
+        private void UpdateClientButton_Click(object sender, RoutedEventArgs e)
         {
+            if (((ViewModelClient)this.DataContext).SelectedClient != null)
+            {
+                ((ViewModelClient)this.DataContext).UpdateClient();
+                this.Close();
+
+            }
 
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.Wpf.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,19 +19,25 @@ namespace MegaCasting.Wpf.Views
     /// <summary>
     /// Logique d'interaction pour Page1.xaml
     /// </summary>
-    public partial class FormEditCasting : Window
+    public partial class FormEditCastingView : Window
     {
 
         public int MyProperty { get; set; }
-        public FormEditCasting()
+        public FormEditCastingView(ViewModelCasting viewModel)
         {
             InitializeComponent();
+            this.DataContext = viewModel;
         }
 
-
-        private void valider_click(object sender, RoutedEventArgs e)
+        private void UpdateCastingButton_Click(object sender, RoutedEventArgs e)
         {
+            if (((ViewModelCasting)this.DataContext).SelectedCasting != null)
+            {
+                ((ViewModelCasting)this.DataContext).UpdateCasting();
+                this.Close();
 
+            }
+            
         }
 
         private void annuler_click(object sender, RoutedEventArgs e)

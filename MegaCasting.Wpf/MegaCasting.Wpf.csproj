@@ -5,14 +5,17 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+	<NoWarn>nu1701</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
+
+    <ProjectReference Include="..\MegaCasting.Core\MegaCasting.Core.csproj" />
     <PackageReference Include="Gu.Wpf.Adorners" Version="2.1.1" />
   </ItemGroup>
 

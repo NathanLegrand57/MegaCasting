@@ -33,6 +33,8 @@ public partial class MegacastingContext : DbContext
 
     public virtual DbSet<TypeContrat> TypeContrats { get; set; }
 
+    public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
+
     public virtual DbSet<Ville> Villes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -97,12 +99,15 @@ public partial class MegacastingContext : DbContext
 
             entity.ToTable("casting");
 
+            entity.HasIndex(e => e.ClientId, "Index_client");
+
             entity.HasIndex(e => e.PartenaireId, "Index_partenaire");
 
             entity.HasIndex(e => e.AdresseId, "adresse_id");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.AdresseId).HasColumnName("adresse_id");
+            entity.Property(e => e.ClientId).HasColumnName("client_id");
             entity.Property(e => e.Date)
                 .HasColumnType("date")
                 .HasColumnName("date");
@@ -121,6 +126,11 @@ public partial class MegacastingContext : DbContext
                 .HasForeignKey(d => d.AdresseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Index_adresse");
+
+            entity.HasOne(d => d.Client).WithMany(p => p.Castings)
+                .HasForeignKey(d => d.ClientId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Index_client");
 
             entity.HasOne(d => d.Partenaire).WithMany(p => p.Castings)
                 .HasForeignKey(d => d.PartenaireId)
@@ -149,11 +159,6 @@ public partial class MegacastingContext : DbContext
                 .HasForeignKey(d => d.AdresseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("ForeignKey_adresse_id");
-
-            entity.HasOne(d => d.Casting).WithMany(p => p.Clients)
-                .HasForeignKey(d => d.CastingId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("ForeignKey_casting_id");
         });
 
         modelBuilder.Entity<Contrat>(entity =>
@@ -236,6 +241,21 @@ public partial class MegacastingContext : DbContext
             entity.Property(e => e.Libelle)
                 .HasMaxLength(100)
                 .HasColumnName("libelle");
+        });
+
+        modelBuilder.Entity<Utilisateur>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("utilisateur");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.MotDePasse)
+                .HasMaxLength(100)
+                .HasColumnName("mot_de_passe");
+            entity.Property(e => e.NomUtilisateur)
+                .HasMaxLength(75)
+                .HasColumnName("nom_utilisateur");
         });
 
         modelBuilder.Entity<Ville>(entity =>

@@ -39,11 +39,11 @@
 
         <Label Grid.Column="2" Grid.Row="1" Content="Libellé du partenaire :" Style="{StaticResource blockstyle}" />
 
-        <TextBox Grid.Column="3" Grid.Row="1" Style="{StaticResource textstyle}"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding SelectedPartenaire.Libelle}" Style="{StaticResource textstyle}"/>
 
         <Button x:Name="annuler" Content="Annuler" Grid.Column="2" Grid.Row="9" Margin="3" Click="annuler_click" Style="{StaticResource buttonCancelStyle}"/>
 
-        <Button x:Name="valider" Content="Valider" Grid.Column="3" Grid.Row="9" Margin="3" Click="valider_click" Style="{StaticResource buttonConfirmStyle}"/>
+        <Button x:Name="valider" Content="Valider" Grid.Column="3" Grid.Row="9" Margin="3" Click="UpdatePartenaireButton_Click" Style="{StaticResource buttonConfirmStyle}"/>
 
     </Grid>
         
