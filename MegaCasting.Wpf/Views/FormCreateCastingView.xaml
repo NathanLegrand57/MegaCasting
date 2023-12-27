@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:adorners="http://gu.se/Adorners"
         xmlns:local="clr-namespace:MegaCasting.Wpf"
         Name="Creation"
         mc:Ignorable="d"
         Title="Création d'un casting"
-        Height="450" Width="800">
+        Height="700" Width="1100">
     
     <Grid ShowGridLines="False">
 
@@ -41,31 +42,33 @@
 
         <Label Grid.Column="2" Grid.Row="1" Content="Titre du casting :" Style="{StaticResource blockstyle}" />
 
-        <Label Grid.Column="2" Grid.Row="2" Content="Domaine d'activité :" Style="{StaticResource blockstyle}"/>
+        <Label Grid.Column="2" Grid.Row="2" Content="Type du casting :" Style="{StaticResource blockstyle}"/>
 
-        <Label Grid.Column="2" Grid.Row="3" Content="Nom de l'entreprise :" Style="{StaticResource blockstyle}"/>
+        <Label Grid.Column="2" Grid.Row="3" Content="Adresse du casting :" Style="{StaticResource blockstyle}"/>
         
         <Label Grid.Column="2" Grid.Row="4" Content="Ville du casting :" Style="{StaticResource blockstyle}"/>
 
-        <Label Grid.Column="2" Grid.Row="5" Content="Adresse du casting :" Style="{StaticResource blockstyle}"/>
+        <Label Grid.Column="2" Grid.Row="5" Content="Partenaire du casting :" Style="{StaticResource blockstyle}"/>
 
         <Label Grid.Column="2" Grid.Row="6" Content="Date du casting :" Style="{StaticResource blockstyle}"/>
 
         <Label Grid.Column="2" Grid.Row="7" Content="Description :" Style="{StaticResource blockstyle}"/>
+		
+		
 
-        <TextBox Grid.Column="3" Grid.Row="1" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding SelectedCasting.Libelle}"  adorners:Watermark.Text="Titre" Style="{StaticResource textstyle}"/>
+        
+        <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding SelectedCasting.Type}"  adorners:Watermark.Text="Type" Style="{StaticResource textstyle}"/>
+		
+		<TextBox Grid.Column="3" Grid.Row="3" Text="{Binding SelectedCasting.Adresse.Rue}"  adorners:Watermark.Text="Adresse" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="2" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <ComboBox Grid.Column="3" Grid.Row="4" SelectedItem="{Binding SelectedVille}"  adorners:Watermark.Text="Ville" ItemsSource="{Binding Villes}" DisplayMemberPath="Nom" Style="{StaticResource comboboxstyle}"/>
+        
+        <ComboBox Grid.Column="3" Grid.Row="5" SelectedItem="{Binding SelectedPartenaire}"  adorners:Watermark.Text="Partenaire" ItemsSource="{Binding Partenaires}" DisplayMemberPath="Libelle" Style="{StaticResource comboboxstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="3" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <DatePicker Grid.Column="3" Grid.Row="6" SelectedDate="{Binding SelectedCasting.Date}"  adorners:Watermark.Text="Date" Style="{StaticResource datestyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="4" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
-
-        <TextBox Grid.Column="3" Grid.Row="5" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
-
-        <TextBox Grid.Column="3" Grid.Row="6" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
-
-        <TextBox Grid.Column="3" Grid.Row="7" Text="" Width="80" Height="30" Style="{StaticResource textstyle}"/>
+        <TextBox Grid.Column="3" Grid.Row="7" Height="110" Text="{Binding SelectedCasting.Description}"  adorners:Watermark.Text="Description" Style="{StaticResource textstyle}"/>
 
         <Button x:Name="annuler" Content="Annuler" Grid.Column="2" Grid.Row="9" Margin="3" Click="annuler_click" Style="{StaticResource buttonCancelStyle}"/>
 

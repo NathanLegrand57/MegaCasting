@@ -14,10 +14,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
+
+    <ProjectReference Include="..\MegaCasting.Core\MegaCasting.Core.csproj" />
+    <PackageReference Include="Gu.Wpf.Adorners" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MegaCasting.Core\MegaCasting.Core.csproj" />
     <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj" />
   </ItemGroup>
 

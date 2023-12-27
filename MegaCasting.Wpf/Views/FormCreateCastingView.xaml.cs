@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.Wpf.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,15 +23,17 @@ namespace MegaCasting.Wpf
     {
 
         public int MyProperty { get; set; }
+
         public FormCreateCastingView()
         {
             InitializeComponent();
+            this.DataContext = new  ViewModelCasting(true);
         }
 
 
         private void valider_click(object sender, RoutedEventArgs e)
-        {
-
+        { 
+            ((ViewModelCasting) this.DataContext).AddCasting();
         }
 
         private void annuler_click(object sender, RoutedEventArgs e)
