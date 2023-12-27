@@ -49,8 +49,7 @@
             <!--<TextBlock Grid.Column="1" Grid.Row="1"  Text="Login : " Foreground="Black" />
             <TextBlock Grid.Column="1" Grid.Row="2" Text="Mot de passe : " Foreground="Black" />-->
 
-
-            <TextBox     Grid.Column="2" Grid.Row="1" Text="{Binding NomUtilisateur, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding NomUtilisateur, UpdateSourceTrigger=PropertyChanged}" />
             <PasswordBox x:Name="PasswordBoxLogin" Grid.Column="2" Grid.Row="3" PasswordChanged="PasswordBoxLogin_PasswordChanged" />
             <Label Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Content="{Binding Message}" Foreground="White" Opacity="0.7" HorizontalAlignment="Center" />
 
