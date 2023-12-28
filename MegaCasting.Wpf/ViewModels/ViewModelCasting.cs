@@ -21,6 +21,7 @@ namespace MegaCasting.Wpf.ViewModels
                 context.Add(this.SelectedCasting);//J'ajoute le casting au contexte
                 this.SelectedCasting.Adresse.VilleId = SelectedVille.Id;
                 this.SelectedCasting.PartenaireId = SelectedPartenaire.Id;
+                //this.SelectedCasting.ClientId = SelectedClient.Id;
                 context.SaveChanges(); // Je sauvegarde les modification du contexte en base de données
                 this.Castings.Add(this.SelectedCasting); // Si j'ai une liste pour la vue, je l'y ajoute pour qu'elle s'affiche
             }
@@ -33,12 +34,15 @@ namespace MegaCasting.Wpf.ViewModels
         public Ville? SelectedVille { get; set; }
 
         public Partenaire? SelectedPartenaire { get; set; }
+        public Client? SelectedClient { get; set; }
 
         public ObservableCollection<Casting> Castings { get; set; }
 
         public ObservableCollection<Ville> Villes { get; set; }
         
         public ObservableCollection<Partenaire> Partenaires { get; set; }
+
+        public ObservableCollection<Client> Clients { get; set; }
 
 
         public Casting? SelectedCasting { get; set; }
@@ -58,6 +62,7 @@ namespace MegaCasting.Wpf.ViewModels
                 Castings = new ObservableCollection<Casting>(mg.Castings.Include(p=>p.Adresse).ThenInclude(a=>a.Ville).Include(b=>b.Partenaire).ToList());
                 Villes = new ObservableCollection<Ville>(mg.Villes.ToList());
                 Partenaires = new ObservableCollection<Partenaire>(mg.Partenaires.ToList());
+                Clients = new ObservableCollection<Client>(mg.Clients.ToList());
             }
         }
         internal void UpdateCasting()
