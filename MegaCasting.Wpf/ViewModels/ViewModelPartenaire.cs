@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.Wpf.ViewModels
 {
@@ -37,7 +38,12 @@ namespace MegaCasting.Wpf.ViewModels
         }
         internal void RemovePartenaire()
         {
-            if (this.SelectedPartenaire is not null)
+            if (this.SelectedPartenaire.Libelle is null)
+            {
+                string text = "Impossible de supprimer une ligne vide";
+                MessageBox.Show(text);
+            }
+            else
             {
                 using (MegacastingContext context = new())
                 {

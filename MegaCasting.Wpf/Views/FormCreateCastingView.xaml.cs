@@ -1,4 +1,5 @@
 ﻿using MegaCasting.Wpf.ViewModels;
+using MegaCasting.Wpf.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace MegaCasting.Wpf
         private void valider_click(object sender, RoutedEventArgs e)
         { 
             ((ViewModelCasting) this.DataContext).AddCasting();
+            this.Close();
         }
 
         private void annuler_click(object sender, RoutedEventArgs e)

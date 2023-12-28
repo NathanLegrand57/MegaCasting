@@ -18,6 +18,4 @@ public partial class Artiste
     public string Email { get; set; } = null!;
 
     public int MetierId { get; set; }
-
-    public virtual Metier Metier { get; set; } = null!;
 }

@@ -26,6 +26,7 @@
                         </Grid.ColumnDefinitions>
                         <Label x:Name="LabelCastingsTitle" Content="Castings :" Grid.Column="1" Style="{StaticResource LabelTitle}"></Label>
                         <DataGrid
+                            x:Name="test"
                          Grid.Column="1"
                          Grid.Row="1" 
                          ItemsSource="{Binding Castings}"

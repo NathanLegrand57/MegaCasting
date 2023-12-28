@@ -14,6 +14,4 @@ public partial class Contrat
     public string Libelle { get; set; } = null!;
 
     public int TypeContratId { get; set; }
-
-    public virtual TypeContrat TypeContrat { get; set; } = null!;
 }
