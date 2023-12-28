@@ -56,11 +56,6 @@ public partial class MegacastingContext : DbContext
                 .HasMaxLength(150)
                 .HasColumnName("rue");
             entity.Property(e => e.VilleId).HasColumnName("ville_id");
-
-            entity.HasOne(d => d.Ville).WithMany(p => p.Adresses)
-                .HasForeignKey(d => d.VilleId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("Index_ville");
         });
 
         modelBuilder.Entity<Artiste>(entity =>
@@ -86,11 +81,6 @@ public partial class MegacastingContext : DbContext
             entity.Property(e => e.Prenom)
                 .HasMaxLength(75)
                 .HasColumnName("prenom");
-
-            entity.HasOne(d => d.Metier).WithMany(p => p.Artistes)
-                .HasForeignKey(d => d.MetierId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("Index_metier");
         });
 
         modelBuilder.Entity<Casting>(entity =>
@@ -121,21 +111,6 @@ public partial class MegacastingContext : DbContext
             entity.Property(e => e.Type)
                 .HasMaxLength(50)
                 .HasColumnName("type");
-
-            entity.HasOne(d => d.Adresse).WithMany(p => p.Castings)
-                .HasForeignKey(d => d.AdresseId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Index_adresse");
-
-            entity.HasOne(d => d.Client).WithMany(p => p.Castings)
-                .HasForeignKey(d => d.ClientId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Index_client");
-
-            entity.HasOne(d => d.Partenaire).WithMany(p => p.Castings)
-                .HasForeignKey(d => d.PartenaireId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Index_partenaire");
         });
 
         modelBuilder.Entity<Client>(entity =>
@@ -146,19 +121,11 @@ public partial class MegacastingContext : DbContext
 
             entity.HasIndex(e => e.AdresseId, "ForeignKey_adresse_id");
 
-            entity.HasIndex(e => e.CastingId, "ForeignKey_casting_id");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.AdresseId).HasColumnName("adresse_id");
-            entity.Property(e => e.CastingId).HasColumnName("casting_id");
             entity.Property(e => e.Libelle)
                 .HasMaxLength(150)
                 .HasColumnName("libelle");
-
-            entity.HasOne(d => d.Adresse).WithMany(p => p.Clients)
-                .HasForeignKey(d => d.AdresseId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("ForeignKey_adresse_id");
         });
 
         modelBuilder.Entity<Contrat>(entity =>
@@ -180,11 +147,6 @@ public partial class MegacastingContext : DbContext
                 .HasMaxLength(150)
                 .HasColumnName("libelle");
             entity.Property(e => e.TypeContratId).HasColumnName("type_contrat_id");
-
-            entity.HasOne(d => d.TypeContrat).WithMany(p => p.Contrats)
-                .HasForeignKey(d => d.TypeContratId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Index_type");
         });
 
         modelBuilder.Entity<DomaineMetier>(entity =>
@@ -212,11 +174,6 @@ public partial class MegacastingContext : DbContext
             entity.Property(e => e.Libelle)
                 .HasMaxLength(75)
                 .HasColumnName("libelle");
-
-            entity.HasOne(d => d.DomaineMetier).WithMany(p => p.Metiers)
-                .HasForeignKey(d => d.DomaineMetierId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Index_domaine");
         });
 
         modelBuilder.Entity<Partenaire>(entity =>

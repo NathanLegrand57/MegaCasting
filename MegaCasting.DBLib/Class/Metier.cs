@@ -10,8 +10,4 @@ public partial class Metier
     public string Libelle { get; set; } = null!;
 
     public int DomaineMetierId { get; set; }
-
-    public virtual ICollection<Artiste> Artistes { get; set; } = new List<Artiste>();
-
-    public virtual DomaineMetier DomaineMetier { get; set; } = null!;
 }

@@ -11,9 +11,5 @@ public partial class Client
 
     public int AdresseId { get; set; }
 
-    public int CastingId { get; set; }
-
     public virtual Adresse Adresse { get; set; } = null!;
-
-    public virtual ICollection<Casting> Castings { get; set; } = new List<Casting>();
 }

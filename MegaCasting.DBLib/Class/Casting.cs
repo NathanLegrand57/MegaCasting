@@ -20,7 +20,6 @@ public partial class Casting
     public int ClientId { get; set; }
 
     public int PartenaireId { get; set; }
-
     public virtual Adresse Adresse { get; set; } = null!;
 
     public virtual Client Client { get; set; } = null!;
