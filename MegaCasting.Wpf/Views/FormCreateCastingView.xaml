@@ -40,39 +40,41 @@
 
         <Label Grid.Column="0" Grid.Row="0" Content="Creation du casting" Style="{StaticResource textblockstyle}"/>
 
-        <Label Grid.Column="2" Grid.Row="1" Content="Titre du casting :" Style="{StaticResource blockstyle}" />
+        <Label Grid.Column="2" Grid.Row="1" Content="Nom du casting :" Style="{StaticResource blockstyle}" />
 
         <Label Grid.Column="2" Grid.Row="2" Content="Type du casting :" Style="{StaticResource blockstyle}"/>
 
-        <Label Grid.Column="2" Grid.Row="3" Content="Adresse du casting :" Style="{StaticResource blockstyle}"/>
-        
+        <Label Grid.Column="2" Grid.Row="3" Content="Nom du client :" Style="{StaticResource blockstyle}"/>
+
         <Label Grid.Column="2" Grid.Row="4" Content="Ville du casting :" Style="{StaticResource blockstyle}"/>
 
-        <Label Grid.Column="2" Grid.Row="5" Content="Partenaire du casting :" Style="{StaticResource blockstyle}"/>
+        <Label Grid.Column="2" Grid.Row="5" Content="Adresse du casting :" Style="{StaticResource blockstyle}"/>
 
-        <Label Grid.Column="2" Grid.Row="6" Content="Date du casting :" Style="{StaticResource blockstyle}"/>
+        <Label Grid.Column="2" Grid.Row="6" Content="Partenaire du casting :" Style="{StaticResource blockstyle}"/>
 
-        <Label Grid.Column="2" Grid.Row="7" Content="Description :" Style="{StaticResource blockstyle}"/>
-		
-		
+        <Label Grid.Column="2" Grid.Row="7" Content="Date du casting :" Style="{StaticResource blockstyle}"/>
+
+        <Label Grid.Column="2" Grid.Row="8" Content="Description :" Style="{StaticResource blockstyle}"/>
 
         <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding SelectedCasting.Libelle}"  adorners:Watermark.Text="Titre" Style="{StaticResource textstyle}"/>
-        
+
         <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding SelectedCasting.Type}"  adorners:Watermark.Text="Type" Style="{StaticResource textstyle}"/>
-		
-		<TextBox Grid.Column="3" Grid.Row="3" Text="{Binding SelectedCasting.Adresse.Rue}"  adorners:Watermark.Text="Adresse" Style="{StaticResource textstyle}"/>
+
+        <ComboBox Grid.Column="3" Grid.Row="3" SelectedItem="{Binding SelectedClient}"  adorners:Watermark.Text="Client" ItemsSource="{Binding Clients}" DisplayMemberPath="Libelle" Style="{StaticResource comboboxstyle}"/>
 
         <ComboBox Grid.Column="3" Grid.Row="4" SelectedItem="{Binding SelectedVille}"  adorners:Watermark.Text="Ville" ItemsSource="{Binding Villes}" DisplayMemberPath="Nom" Style="{StaticResource comboboxstyle}"/>
-        
-        <ComboBox Grid.Column="3" Grid.Row="5" SelectedItem="{Binding SelectedPartenaire}"  adorners:Watermark.Text="Partenaire" ItemsSource="{Binding Partenaires}" DisplayMemberPath="Libelle" Style="{StaticResource comboboxstyle}"/>
 
-        <DatePicker Grid.Column="3" Grid.Row="6" SelectedDate="{Binding SelectedCasting.Date}"  adorners:Watermark.Text="Date" Style="{StaticResource datestyle}"/>
+        <TextBox Grid.Column="3" Grid.Row="5" Text="{Binding SelectedCasting.Adresse.Rue}"  adorners:Watermark.Text="Adresse" Style="{StaticResource textstyle}"/>
 
-        <TextBox Grid.Column="3" Grid.Row="7" Height="110" Text="{Binding SelectedCasting.Description}"  adorners:Watermark.Text="Description" Style="{StaticResource textstyle}"/>
+        <ComboBox Grid.Column="3" Grid.Row="6" SelectedItem="{Binding SelectedPartenaire}"  adorners:Watermark.Text="Partenaire" ItemsSource="{Binding Partenaires}" DisplayMemberPath="Libelle" Style="{StaticResource comboboxstyle}"/>
 
-        <Button x:Name="annuler" Content="Annuler" Grid.Column="2" Grid.Row="9" Margin="3" Foreground="White" Click="annuler_click" Style="{StaticResource buttonCancelStyle}"/>
+        <DatePicker Grid.Column="3" Grid.Row="7" SelectedDate="{Binding SelectedCasting.Date}"  adorners:Watermark.Text="Date" Style="{StaticResource datestyle}"/>
 
-        <Button x:Name="valider" Content="Valider" Grid.Column="3" Grid.Row="9" Margin="3" Foreground="White" Click="valider_click" Style="{StaticResource buttonConfirmStyle}"/>
-        
+        <TextBox Grid.Column="3" Grid.Row="8" Height="110" Text="{Binding SelectedCasting.Description}"  adorners:Watermark.Text="Description" Style="{StaticResource textstyle}"/>
+
+        <Button x:Name="annuler" Content="Annuler" Grid.Column="2" Grid.Row="9" Margin="3" Click="annuler_click" Style="{StaticResource buttonCancelStyle}" />
+
+        <Button x:Name="valider" Content="Valider" Grid.Column="3" Grid.Row="9" Margin="3" Click="valider_click" Style="{StaticResource buttonConfirmStyle}"/>
+
     </Grid>
 </Window>
