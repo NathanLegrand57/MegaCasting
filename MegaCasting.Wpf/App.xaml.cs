@@ -159,7 +159,7 @@ namespace MegaCasting.Wpf
             {
                 Type = "Cinéma",
                 Libelle = "Cadreur",
-                Description = "Nous recherchons un cadreur compétent et motivé disposé à rejoindre une équipe technique dans le cinéma",
+                Description = "Nous recherchons", // un cadreur compétent et motivé disposé à rejoindre une équipe technique dans le cinéma
                 Date = currentTime,
                 AdresseId= 1,
                 ClientId= 1,

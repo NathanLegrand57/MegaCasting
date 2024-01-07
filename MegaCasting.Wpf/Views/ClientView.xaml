@@ -26,7 +26,8 @@
                              ItemsSource="{Binding Clients}"
 					         DisplayMemberPath="Libelle"
 					         SelectedItem="{Binding SelectedClient}"
-                             AutoGenerateColumns="False">
+                             AutoGenerateColumns="False"
+                             IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Libellé de l'entreprise" Binding="{Binding Libelle}"/>
                                 <DataGridTextColumn Header="Ville" Binding="{Binding Adresse.Ville.Nom}"/>

@@ -25,10 +25,10 @@ namespace MegaCasting.Wpf
 
         public int MyProperty { get; set; }
 
-        public FormCreateCastingView()
+        public FormCreateCastingView(ViewModelCasting context)
         {
             InitializeComponent();
-            this.DataContext = new  ViewModelCasting(true);
+            this.DataContext = context;
         }
 
 

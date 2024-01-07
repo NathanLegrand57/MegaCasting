@@ -20,15 +20,17 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label x:Name="LabelPartenairesTitle" Content="Partenaires :" Grid.Column="1" Style="{StaticResource LabelTitle}"></Label>
-                <DataGrid
+            <DataGrid
                  Grid.Column="1"
                  Grid.Row="1" 
                  ItemsSource="{Binding Partenaires}"
 				 DisplayMemberPath="Libelle"
 				 SelectedItem="{Binding SelectedPartenaire}"
-                 AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Libellé du partenaire" Binding="{Binding Libelle}"/>
+                 AutoGenerateColumns="False"
+                IsReadOnly="True">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Libellé du partenaire" Binding="{Binding Libelle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
         </Grid>

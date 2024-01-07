@@ -7,25 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 
 namespace MegaCasting.Wpf.ViewModels
 {
 
     public class ViewModelCasting
     {
-        internal void AddCasting()
-        {
-            
+          internal void AddCasting()
+          {
+
             using (MegacastingContext context = new())
-            {
-                context.Add(this.SelectedCasting);//J'ajoute le casting au contexte
-                this.SelectedCasting.Adresse.VilleId = SelectedVille.Id;
-                this.SelectedCasting.PartenaireId = SelectedPartenaire.Id;
-                //this.SelectedCasting.ClientId = SelectedClient.Id;
+              {
+                if (this.NewCasting == null)
+                {
+                    this.NewCasting = new Casting();
+                    this.NewCasting.Adresse = new Adresse();
+                }
+
+                context.Add(this.NewCasting);//J'ajoute le casting au contexte
+                this.NewCasting.Adresse.VilleId = SelectedVille.Id;
+                this.NewCasting.PartenaireId = SelectedPartenaire.Id;
+                this.NewCasting.ClientId = SelectedClient.Id;
+                  //this.SelectedCasting.ClientId = SelectedClient.Id;
                 context.SaveChanges(); // Je sauvegarde les modification du contexte en base de données
-                this.Castings.Add(this.SelectedCasting); // Si j'ai une liste pour la vue, je l'y ajoute pour qu'elle s'affiche
-            }
-        }
+                this.Castings.Add(this.NewCasting); // Si j'ai une liste pour la vue, je l'y ajoute pour qu'elle s'affiche
+                this.SelectedCasting = this.NewCasting;
+                context.Castings
+                    .Include(p => p.Adresse)
+                    .ThenInclude(a => a.Ville)
+                    .First(c => c.Id == this.NewCasting.Id);
+              }
+          }
 
 
         //-------------------------------------------------------------------------------------------------------------
@@ -47,15 +60,16 @@ namespace MegaCasting.Wpf.ViewModels
 
         public Casting? SelectedCasting { get; set; }
 
-        public ViewModelCasting(bool isNew = false)
+        public Casting? NewCasting { get; set; }
+
+        public ViewModelCasting()
         {
-
-            if (isNew) { 
-            
-                SelectedCasting = new Casting();
-                SelectedCasting.Adresse = new Adresse();
-
+            if (this.NewCasting == null)
+            {
+                this.NewCasting = new Casting();
+                this.NewCasting.Adresse = new Adresse();
             }
+
 
             using (MegacastingContext mg = new MegacastingContext())
             {
