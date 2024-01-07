@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MegaCasting.Wpf.Views"
         mc:Ignorable="d"
         d:DesignHeight="450" d:DesignWidth="800">
-
+            
     <Grid ShowGridLines="True" >
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -31,21 +31,27 @@
 
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Details du Casting" FontSize="35" TextAlignment="Center"/>
 
-        <DataGrid Grid.Column="2" Grid.Row="2">
-
+        <DataGrid
+	    		         x:Name="DataGridDetail"
+                         Grid.Column="2"
+                         Grid.Row="2"
+                         ItemsSource="{Binding Castings}"
+			             DisplayMemberPath="Libelle"
+				         SelectedItem="{Binding SelectedCasting}"
+                         AutoGenerateColumns="False"
+                         IsReadOnly="True">
 
             <DataGrid.Columns>
-
                 <DataGridTextColumn Header="Nom de l'entreprise" Binding="{Binding Libelle}"/>
-                <DataGridTextColumn Header="Adresse de l'entreprise" Binding="{Binding Adresse.Ville.Nom}"/>
-                <DataGridTextColumn Header="Code postal de l'entreprise" Binding="{Binding Adresse.Ville.Code_postal}"/>
+                <DataGridTextColumn Header="Adresse de l'entreprise" Binding="{Binding Adresse.Rue}"/>
+                <DataGridTextColumn Header="Code postal de l'entreprise" Binding="{Binding Adresse.Ville.CodePostal}"/>
                 <DataGridTextColumn Header="Adresse du casting" Binding="{Binding Adresse.Rue}"/>
-                <DataGridTextColumn Header="Code postal du casting" Binding="{Binding Adresse.Ville.Code_postal}"/>
+                <DataGridTextColumn Header="Code postal du casting" Binding="{Binding Adresse.Ville.CodePostal}"/>
                 <DataGridTextColumn Header="Date du casting" Binding="{Binding Date}"/>
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
-
+                <DataGridTextColumn Header="Partenaire" Binding="{Binding Partenaire.Libelle}"/>
             </DataGrid.Columns>
-
+            
         </DataGrid>
 
     </Grid>

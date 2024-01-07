@@ -37,7 +37,7 @@ namespace MegaCasting.Wpf.Views
 
         private void Create_Casting_Click(object sender, RoutedEventArgs e)
         {
-            FormCreateCastingView formCreateCastingView = new FormCreateCastingView();
+            FormCreateCastingView formCreateCastingView = new FormCreateCastingView((ViewModelCasting)this.DataContext);
 
             formCreateCastingView.ShowDialog();
 

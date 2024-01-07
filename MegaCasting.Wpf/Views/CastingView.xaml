@@ -32,7 +32,10 @@
                          ItemsSource="{Binding Castings}"
 						         DisplayMemberPath="Libelle"
 						         SelectedItem="{Binding SelectedCasting}"
-                    AutoGenerateColumns="False">
+                                 AutoGenerateColumns="False"
+                                 IsReadOnly="True"
+>
+                           
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Nom du casting" Binding="{Binding Libelle}"/>
                                 <DataGridTextColumn Header="Type" Binding="{Binding Type}"/>
